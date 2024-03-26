@@ -36,13 +36,18 @@ int Delitel(int num1, int num2)
 		return num1 / num2;
 	}
 }
+
+int Procent(int num1,int num2)
+{
+	return num1 * num2 / 100;
+}
 int main()
 {
 	char deistv;
 	int num1, num2;
 	setlocale(LC_ALL, "ru");
 	srand(time(NULL));
-	cout << "Выберите действие: + - * /\n";
+	cout << "Выберите действие: + - * / %\n";
 	cin >> deistv;
 	cout << "Введите первое число: \n";
 	cin >> num1;
@@ -70,6 +75,10 @@ int main()
 		{
 			Delitel(num1, num2);
 		}
+	}
+	else if (deistv == '%')
+	{
+		cout << Procent(num1,num2);
 	}
 
 	return 0;
